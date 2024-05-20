@@ -51,9 +51,20 @@ export const HomePage = () => {
       </div>
       <div className="movies-container">
         <div className="">
-          <h2 className="home-page-title ">
-            <FaStar /> Flimer jeg skal se!
-          </h2>
+          <div
+            style={{
+              paddingRight: 10,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <h2 className="home-page-title ">
+              <FaStar /> Filmer jeg skal se!
+            </h2>
+            <h2 className="">Disse filmene ligger i onskelisten din:</h2>
+          </div>
+
           <div className="movies">
             {movies.map((movie) => (
               <div key={movie._id} className="list__item">
