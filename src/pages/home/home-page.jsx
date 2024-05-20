@@ -94,7 +94,15 @@ export const HomePage = () => {
           </h2>
           <div className="home-users">
             {users_?.map((usr) => (
-              <li className="user-page">{usr.name}</li>
+              <li
+                key={`user-home-page-${usr.name}`}
+                onClick={() => {
+                  navigate(`/user/${usr.name}`);
+                }}
+                className="user-page"
+              >
+                {usr.name}
+              </li>
             ))}
           </div>
         </div>

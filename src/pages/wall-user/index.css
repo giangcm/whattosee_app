@@ -1,0 +1,58 @@
+.detail-user-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+  gap: 10px; /* Optional: space between grid items */
+  padding: 0 10px; /* Optional: padding around the grid container */
+}
+
+.movies {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 30px; /* Optional: space between grid items */
+  padding: 0 10px; /* Optional: padding around the grid container */
+}
+
+.movie-title {
+  font-size: 18px;
+  padding-top: 20px;
+  font-weight: 600;
+}
+
+.movie-title:hover {
+  text-decoration: underline !important;
+  color: blue;
+}
+
+.right-container {
+  padding: 20px;
+  height: fit-content;
+  background: #f1f1f1;
+}
+
+.home-page-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.home-users {
+  padding-left: 30px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-page {
+  cursor: pointer;
+}
+
+.user-page:hover {
+  text-decoration: underline !important;
+  color: blue;
+}
