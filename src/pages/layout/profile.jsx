@@ -1,13 +1,13 @@
 import React, { useCallback } from 'react';
 import { CiUser } from 'react-icons/ci';
 import { useNavigate } from 'react-router-dom';
+import { getCurrentUser, removeCurrentUser } from '../../utils/user';
 
 const UserProfile = () => {
-  const user = localStorage.getItem('name');
   let navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
-    localStorage.removeItem('name');
+    removeCurrentUser();
     navigate('/');
   });
   return (
@@ -20,7 +20,7 @@ const UserProfile = () => {
       onClick={handleLogout}
     >
       <CiUser />
-      <span>{user}</span>
+      <span>{getCurrentUser()}</span>
     </div>
   );
 };
