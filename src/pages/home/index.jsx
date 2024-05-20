@@ -1,63 +1,104 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
-import * as ReactBootStrap from "react-bootstrap";
-import { MdAccountCircle } from "react-icons/md";
+import { CiDesktop } from 'react-icons/ci';
 
-import './header.css'
+import './header.css';
 
-import {
-  BrowserRouter as Router,
-  Link,
-  useNavigate
-} from "react-router-dom";
-import { Content } from './content';
+import { Nav } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import UserProfile from './profile';
 
 const Home = () => {
-  let navigate = useNavigate();
-  const Logout = () => {
-    localStorage.setItem("name", "")
-    navigate("/");
-    
-  }
-  return (
-    <>
-      <ReactBootStrap.Navbar expand="xl" bg="danger" variant="dark">
-        <Col md>
-          <ReactBootStrap.Navbar.Brand href="#home">What to see ?</ReactBootStrap.Navbar.Brand>
-          <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        </Col>
-        <Col md>
-          <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav" >
-            <ReactBootStrap.Nav className="mr-auto">
-              <Link to="/features">
-                <ReactBootStrap.Nav.Link >Features</ReactBootStrap.Nav.Link>
-              </Link>
-              <Link to="/pricing">
-                <ReactBootStrap.Nav.Link >Pricing</ReactBootStrap.Nav.Link>
-              </Link>
-            </ReactBootStrap.Nav>
-            <ReactBootStrap.Nav>
-              <Link to="/deets">
-                <ReactBootStrap.Nav.Link >More deets</ReactBootStrap.Nav.Link>
-              </Link>
-              <Link to="/dankmemes">
-                <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
-                  Dank memes
-                </ReactBootStrap.Nav.Link>
-              </Link>
-            </ReactBootStrap.Nav>
-            <ReactBootStrap.Nav>
-              <Link to="/features">
-                <a onClick={Logout}>Logout</a>
-              </Link>
-            </ReactBootStrap.Nav>
+  const navigate = useNavigate();
 
-          </ReactBootStrap.Navbar.Collapse>
-        </Col>
-      </ReactBootStrap.Navbar>
-      <Content />
-    </>
-  )
-}
+  return (
+    <Nav
+      variant="underline"
+      style={{
+        padding: 20,
+        justifyContent: 'space-between',
+        backgroundColor: '#3a2f4d',
+      }}
+      activeKey="/"
+      onSelect={(selectedKey) => navigate(selectedKey)}
+    >
+      <Nav.Item>
+        <Nav.Link href="/">What to see?</Nav.Link>
+      </Nav.Item>
+      <Nav
+        style={{
+          alignItems: 'center',
+          gap: 20,
+        }}
+        activeKey={'/home'}
+      >
+        <Nav.Item>
+          <Nav.Link href="/home" eventKey="/home">
+            Home
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="/category">
+            <CiDesktop /> Category
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <UserProfile />
+        </Nav.Item>
+      </Nav>
+    </Nav>
+    // <>
+    //   <Nav
+    //     expand="xl"
+    //     bg="danger"
+    //     variant="dark"
+    //     onSelect={(item) => {
+    //       console.log(item);
+    //     }}
+    //   >
+    //     <Col md>
+    //       <Nav.Item
+    //         style={{
+    //           paddingLeft: 20,
+    //         }}
+    //       >
+    //         <Nav.Link href="/home"> What to see ?</Nav.Link>
+    //       </Nav.Item>
+    //     </Col>
+    //     <Col md>
+    //       <Navbar.Collapse
+    //         id="responsive-navbar-nav"
+    //         className="justify-content-end"
+    //         style={{
+    //           paddingRight: 20,
+    //         }}
+    //       >
+    //         <ReactBootStrap.Nav className="mr-auto">
+    //           {
+    //             //what i see
+    //           }
+    //           <Link to="/home">
+    //             <ReactBootStrap.Nav.Link>
+    //               Hva skal jeg se
+    //             </ReactBootStrap.Nav.Link>
+    //           </Link>
+    //           <Link to="/category">
+    //             <ReactBootStrap.Nav.Link>
+    //               Bla gjennom sjangere
+    //             </ReactBootStrap.Nav.Link>
+    //           </Link>
+    //         </ReactBootStrap.Nav>
+    //         <ReactBootStrap.Nav>
+    //           <UserProfile />
+    //           {/* <Link to="/features">
+    //             <a onClick={Logout}>Logout</a>
+    //           </Link> */}
+    //         </ReactBootStrap.Nav>
+    //       </Navbar.Collapse>
+    //     </Col>
+    //   </Nav>
+    //   <Content />
+    // </>
+  );
+};
 
 export default Home;
