@@ -13,7 +13,12 @@ export const removeCurrentUser = () => {
 };
 
 export const users = [
-  { id: 1, name: 'Ulrikke', hobby: '' },
-  { id: 2, name: 'Marius', hobby: '' },
-  { id: 3, name: 'Egil', hobby: '' },
+  { id: 1, name: 'Ulrikke', favorite: ['galaxy'], like: ['movie_926'] },
+  {
+    id: 2,
+    name: 'Marius',
+    favorite: ['galaxy', 'alien'],
+    like: ['movie_926', 'movie_679'],
+  },
+  { id: 3, name: 'Egil', favorite: ['alien'], like: ['movie_679'] },
 ];

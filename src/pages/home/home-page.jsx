@@ -19,11 +19,13 @@ export const HomePage = () => {
 
   const getStaticPaths = async () => {
     // Get the paths we want to pre-render based on persons
-    const query = `*[_type == "movie"] {
+    const query = `*[_type == "movie" ] {
             _id,
             title,
+            _type,
             releaseDate,
             poster,
+            "category": category->title,
             "posterAspect": poster.asset->.metadata.dimensions.aspectRatio,
             "director": crewMembers[job == "Director"][0].person->name
           }[0...3]
