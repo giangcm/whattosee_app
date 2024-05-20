@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Sanity } from '../../../sanity';
 import '../../styles/list.css';
 import { imageUrlFor } from '../../utils/image';
+import { getCurrentUser } from '../../utils/user';
 
 export const HomePage = () => {
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = getCurrentUser();
+    navigate(`${user ? '/home' : '/'}`);
+  }, []);
 
   const getStaticPaths = async () => {
     // Get the paths we want to pre-render based on persons

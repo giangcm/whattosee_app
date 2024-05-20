@@ -1,9 +1,11 @@
 export const setCurrentUser = (user) => {
-  localStorage.getItem('user', user);
+  const user_ = JSON.stringify(user);
+  localStorage.setItem('user', user_);
 };
 
 export const getCurrentUser = () => {
-  return localStorage.getItem('user');
+  const user_ = localStorage.getItem('user');
+  return JSON.parse(user_);
 };
 
 export const removeCurrentUser = () => {

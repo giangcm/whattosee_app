@@ -16,11 +16,12 @@ const UserProfile = () => {
         color: 'white',
         display: 'flex',
         alignItems: 'center',
+        cursor: 'pointer',
       }}
       onClick={handleLogout}
     >
       <CiUser />
-      <span>{getCurrentUser()}</span>
+      <span>{getCurrentUser()?.name}</span>
     </div>
   );
 };
