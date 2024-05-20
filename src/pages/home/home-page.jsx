@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { CiFaceSmile } from 'react-icons/ci';
 import { FaStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Sanity } from '../../../sanity';
 import '../../styles/list.css';
 import { imageUrlFor } from '../../utils/image';
-import { getCurrentUser } from '../../utils/user';
+import { getCurrentUser, users } from '../../utils/user';
 import './index.css';
 
 export const HomePage = () => {
@@ -33,8 +34,10 @@ export const HomePage = () => {
   useEffect(() => {
     getStaticPaths();
   }, []);
-  console.log('movies', movies);
+
   const user = getCurrentUser();
+
+  const users_ = users?.filter((u) => u?.id !== user?.id);
   return (
     <>
       <div
@@ -48,17 +51,7 @@ export const HomePage = () => {
       </div>
       <div className="movies-container">
         <div className="">
-          <h2
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 5,
-              margin: '10px 10px',
-              paddingBottom: 10,
-              fontWeight: 600,
-              fontSize: 16,
-            }}
-          >
+          <h2 className="home-page-title ">
             <FaStar /> Flimer jeg skal se!
           </h2>
           <div className="movies">
@@ -81,7 +74,17 @@ export const HomePage = () => {
             ))}
           </div>
         </div>
-        <div className="right-container">righ</div>
+        <div className="right-container">
+          <h2 className="home-page-title">
+            <CiFaceSmile />
+            Jeg skal se sammen med...
+          </h2>
+          <div className="home-users">
+            {users_?.map((usr) => (
+              <li className="user-page">{usr.name}</li>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

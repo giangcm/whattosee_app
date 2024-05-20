@@ -1,17 +1,11 @@
 // import { useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCurrentUser, setCurrentUser } from '../../utils/user';
+import { getCurrentUser, setCurrentUser, users } from '../../utils/user';
 import './user.css';
 
 export const UserPage = () => {
   let navigate = useNavigate();
-
-  const users = [
-    { id: 1, name: 'Ulrikke', hobby: '' },
-    { id: 2, name: 'Marius', hobby: '' },
-    { id: 3, name: 'Egil', hobby: '' },
-  ];
 
   const handleClick = (user) => {
     setCurrentUser(user);

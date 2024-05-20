@@ -11,3 +11,9 @@ export const getCurrentUser = () => {
 export const removeCurrentUser = () => {
   localStorage.removeItem('user');
 };
+
+export const users = [
+  { id: 1, name: 'Ulrikke', hobby: '' },
+  { id: 2, name: 'Marius', hobby: '' },
+  { id: 3, name: 'Egil', hobby: '' },
+];
