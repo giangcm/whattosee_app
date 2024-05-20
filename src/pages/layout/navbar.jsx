@@ -25,6 +25,7 @@ const Navbar = () => {
         <Nav.Link href="/">What to see?</Nav.Link>
       </Nav.Item>
       <Nav
+        className="nav-right"
         style={{
           alignItems: 'center',
           gap: 20,
@@ -33,13 +34,11 @@ const Navbar = () => {
       >
         <Nav.Item>
           <Nav.Link href="/home" eventKey="/home">
-            Home
+            <CiDesktop /> Hva skal jeg se?
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="/category">
-            <CiDesktop /> Category
-          </Nav.Link>
+          <Nav.Link eventKey="/category">Bla gjennom sjangere</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <UserProfile />

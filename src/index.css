@@ -4,3 +4,11 @@ a {
 .nav-link {
   color: white !important;
 }
+
+.nav-right > .nav-item > .nav-link.active {
+  background: #ce8fbb !important;
+  border: none;
+  padding: 5px;
+  color: black !important;
+  font-weight: 550;
+}

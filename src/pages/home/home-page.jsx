@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import { Sanity } from '../../../sanity';
 import '../../styles/list.css';
 import { imageUrlFor } from '../../utils/image';
 import { getCurrentUser } from '../../utils/user';
+import './index.css';
 
 export const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -32,48 +34,55 @@ export const HomePage = () => {
     getStaticPaths();
   }, []);
   console.log('movies', movies);
+  const user = getCurrentUser();
   return (
     <>
-      <div className="movies">
-        <ul className="list">
-          {movies.map((movie) => (
-            <li key={movie._id} className="list__item">
-              <Link to={`/movie/${movie._id}`}>
-                <a>
-                  {movie.poster && (
-                    <img
-                      src={imageUrlFor(movie.poster)
-                        .ignoreImageParams()
-                        .width(300)}
-                      width="100"
-                      height={100 / movie.posterAspect}
-                    />
-                  )}
-                  <div style={{ paddingTop: '0.2em' }}>
-                    {movie.releaseDate.substr(0, 4)}
-                  </div>
-                  <h3>{movie.title}</h3>
-                  {movie.director && (
-                    <span className="movies-list__directed-by">
-                      Directed by {movie.director}
-                    </span>
-                  )}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div
+        style={{
+          margin: '30px 20px',
+          fontWeight: 600,
+          fontSize: 20,
+        }}
+      >
+        Hei, {user?.name}{' '}
       </div>
-      <style jsx>{`
-        .movies {
-          padding: 1rem;
-        }
-        .movies-list__directed-by {
-          display: block;
-          font-size: 1rem;
-        }
-      `}</style>
-      {/* <style jsx>{listStyles}</style> */}
+      <div className="movies-container">
+        <div className="">
+          <h2
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 5,
+              margin: '10px 10px',
+              paddingBottom: 10,
+              fontWeight: 600,
+              fontSize: 16,
+            }}
+          >
+            <FaStar /> Flimer jeg skal se!
+          </h2>
+          <div className="movies">
+            {movies.map((movie) => (
+              <div key={movie._id} className="list__item">
+                {movie.poster && (
+                  <img
+                    style={{
+                      width: '100%',
+                    }}
+                    src={imageUrlFor(movie.poster)
+                      .ignoreImageParams()
+                      .width(200)}
+                  />
+                )}
+                <h2 className="movie-title">
+                  {movie.title} ({movie.releaseDate.substr(0, 4)})
+                </h2>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="right-container">righ</div>
+      </div>
     </>
   );
 };
