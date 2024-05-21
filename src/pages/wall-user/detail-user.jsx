@@ -9,6 +9,10 @@ export const DetailUser = () => {
   const user = users.filter((usr) => location.pathname.includes(usr?.name))[0];
   const currentUser = getCurrentUser();
 
+  const commonGenre = user?.category?.filter((genre) =>
+    currentUser?.category?.includes(genre)
+  );
+
   return (
     <div>
       <h2 className="detail-user-title">
@@ -39,7 +43,7 @@ export const DetailUser = () => {
           <TemplateCategory
             key={'category-utforsk'}
             title={'Utforsk!'}
-            categories={['Action', 'Adventure']}
+            categories={commonGenre}
             description={
               'Dere liker begge disse sjangere, sjekk hvike filmer som finnes a velge mellom:'
             }
