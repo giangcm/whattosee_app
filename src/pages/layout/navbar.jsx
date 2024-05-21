@@ -22,7 +22,14 @@ const Navbar = () => {
       onSelect={(selectedKey) => navigate(selectedKey)}
     >
       <Nav.Item>
-        <Nav.Link href="/">What to see?</Nav.Link>
+        <Nav.Link
+          style={{
+            fontSize: 30,
+          }}
+          href="/"
+        >
+          What to see?
+        </Nav.Link>
       </Nav.Item>
       <Nav
         className="nav-right"

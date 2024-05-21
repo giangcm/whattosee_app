@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+import CategoryPage from './pages/category/category-page';
 import { HomePage } from './pages/home/home-page';
 import { DefaultLayout } from './pages/layout/default-layout';
 import MovieDetail from './pages/movieDetail';
@@ -31,6 +32,10 @@ export const routes = createBrowserRouter([
       {
         path: 'category/:category',
         element: <UserCategoryPage />,
+      },
+      {
+        path: 'category',
+        element: <CategoryPage />,
       },
     ],
   },
