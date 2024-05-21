@@ -44,7 +44,13 @@ export const HomePage = () => {
               <div
                 key={'home-page-movie-poster' + movie._id}
                 className="list__item"
-                onClick={() => navigate(`/movie/${movie._id}`)}
+                onClick={() =>
+                  window.open(
+                    `https://www.imdb.com/title/${movie.imdb}/`,
+                    '_blank',
+                    'rel=noopener noreferrer'
+                  )
+                }
               >
                 {movie.poster && (
                   <img
@@ -58,7 +64,13 @@ export const HomePage = () => {
                 )}
                 <h2
                   className="movie-title"
-                  onClick={() => navigate(`/movie/${movie._id}`)}
+                  onClick={() =>
+                    window.open(
+                      `https://www.imdb.com/title/${movie.imdb}/`,
+                      '_blank',
+                      'rel=noopener noreferrer'
+                    )
+                  }
                 >
                   {movie.title}
                 </h2>

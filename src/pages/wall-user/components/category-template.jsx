@@ -31,7 +31,13 @@ export const TemplateCategory = ({
           <div
             key={`category-${title}-${movie.id}`}
             className="template-container"
-            onClick={() => navigate(`/movie/${movie._id}`)}
+            onClick={() =>
+              window.open(
+                `https://www.imdb.com/title/${movie.imdb}/`,
+                '_blank',
+                'rel=noopener noreferrer'
+              )
+            }
             style={{
               cursor: 'pointer',
             }}
@@ -46,7 +52,13 @@ export const TemplateCategory = ({
             )}
             <h2
               className="movie-title"
-              onClick={() => navigate(`/movie/${movie._id}`)}
+              onClick={() =>
+                window.open(
+                  `https://www.imdb.com/title/${movie.imdb}/`,
+                  '_blank',
+                  'rel=noopener noreferrer'
+                )
+              }
             >
               {movie.title}
             </h2>

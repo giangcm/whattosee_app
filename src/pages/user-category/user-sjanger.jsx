@@ -17,7 +17,13 @@ const SjangerPage = () => {
         {categories?.map((movie) => (
           <div
             key={`category-genre-${movie.id}`}
-            onClick={() => navigate(`/movie/${movie._id}`)}
+            onClick={() =>
+              window.open(
+                `https://www.imdb.com/title/${movie.imdb}/`,
+                '_blank',
+                'rel=noopener noreferrer'
+              )
+            }
             className="sjanger-category-item"
           >
             {movie.poster && (
@@ -30,7 +36,13 @@ const SjangerPage = () => {
             )}
             <h2
               className="sjanger-movie-title"
-              onClick={() => navigate(`/movie/${movie._id}`)}
+              onClick={() =>
+                window.open(
+                  `https://www.imdb.com/title/${movie.imdb}/`,
+                  '_blank',
+                  'rel=noopener noreferrer'
+                )
+              }
             >
               {movie.title}
             </h2>
