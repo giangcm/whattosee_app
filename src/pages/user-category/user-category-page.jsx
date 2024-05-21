@@ -4,7 +4,7 @@ import { imageUrlFor } from '../../utils/image';
 import './index.css';
 import { useMovieCategory } from './useCategory';
 
-const CategoryPage = () => {
+const UserCategoryPage = () => {
   const navigate = useNavigate();
   const { categories } = useMovieCategory();
   console.log(categories);
@@ -47,4 +47,4 @@ const CategoryPage = () => {
   );
 };
 
-export default CategoryPage;
+export default UserCategoryPage;
