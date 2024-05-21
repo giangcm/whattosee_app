@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { HomePage } from './pages/home/home-page';
 import { DefaultLayout } from './pages/layout/default-layout';
+import MovieDetail from './pages/movieDetail';
 import { UserPage } from './pages/user/user-page';
 import { DetailUser } from './pages/wall-user/detail-user';
 
@@ -21,6 +22,10 @@ export const routes = createBrowserRouter([
       {
         path: 'user/:name',
         element: <DetailUser />,
+      },
+      {
+        path: 'movie/:id',
+        element: <MovieDetail />,
       },
     ],
   },

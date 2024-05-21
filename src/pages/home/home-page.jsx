@@ -51,6 +51,7 @@ export const HomePage = () => {
               <div
                 key={'home-page-movie-poster' + movie._id}
                 className="list__item"
+                onClick={() => navigate(`/movie/${movie._id}`)}
               >
                 {movie.poster && (
                   <img
