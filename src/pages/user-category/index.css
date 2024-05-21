@@ -13,6 +13,9 @@
   grid-template-columns: 1fr 1fr 1fr; /* Two equal columns */
   gap: 40px; /* Optional: space between grid items */
   padding: 10px 0px; /* Optional: padding around the grid container */
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+  }
 }
 
 .category-title {

@@ -1,11 +1,20 @@
 .wrapper-container {
   margin: 20px 10%;
+  @media only screen and (max-width: 1024px) {
+    margin: 20px;
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 10px;
+  }
 }
 .detail-user-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
   gap: 10px; /* Optional: space between grid items */
   padding: 0 10px; /* Optional: padding around the grid container */
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .detail-user-title {
@@ -28,6 +37,9 @@
   font-size: 18px;
   padding-top: 20px;
   font-weight: 600;
+  @media only screen and (max-width: 768px) {
+    padding-top: 10px;
+  }
 }
 
 .movie-title:hover {
@@ -39,24 +51,6 @@
   padding: 20px;
   height: fit-content;
   background: #f1f1f1;
-}
-
-.home-page-title {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin: 10px 10px;
-  padding-bottom: 10px;
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.home-users {
-  padding-left: 30px;
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
 }
 
 .user-page {

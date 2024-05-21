@@ -3,6 +3,10 @@
   grid-template-columns: 1fr 0.7fr; /* Two equal columns */
   gap: 10px; /* Optional: space between grid items */
   padding: 10px 0px; /* Optional: padding around the grid container */
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .template-title {
@@ -13,6 +17,15 @@
 
 .template-description {
   padding: 10px 0px;
+}
+
+.template-container-film {
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Optional: space between grid items */
+    padding: 10px 0px; /* Optional: padding around the grid container */
+  }
 }
 
 .template-category {

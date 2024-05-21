@@ -26,7 +26,7 @@ export const TemplateCategory = ({
       ) : (
         <p className="template-description">{description}</p>
       )}
-      <div>
+      <div className="template-container-film">
         {catchUpMovies?.map((movie) => (
           <div
             key={`category-${title}-${movie.id}`}

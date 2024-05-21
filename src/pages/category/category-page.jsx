@@ -3,67 +3,37 @@ import { CiStar } from 'react-icons/ci';
 import { FaStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentUser } from '../../utils/user';
+import './index.css'; // Import CSS file
 
 const CategoryPage = () => {
   const navigate = useNavigate();
   const currentUser = getCurrentUser();
   return (
-    <div
-      style={{
-        margin: 20,
-      }}
-    >
-      <h2
-        style={{
-          fontSize: 24,
-          fontWeight: 600,
-        }}
-      >
-        Sjangere
-      </h2>
-      <div
-        style={{
-          marginTop: 20,
-          width: '40%',
-        }}
-      >
+    <div className="container-category-page">
+      {' '}
+      {/* Apply CSS class */}
+      <h2 className="heading">Sjangere</h2> {/* Apply CSS class */}
+      <div className="category">
+        {' '}
+        {/* Apply CSS class */}
         {currentUser?.genres?.map((ctg) => (
           <div
             key={`category-user-ctg-${ctg}`}
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              borderBottom: '1px solid silver',
-              padding: '10px 5px',
-            }}
+            className="category-item"
             onClick={() => navigate(`/category/${ctg?.name}`)}
           >
-            <span
-              style={{
-                textDecoration: 'underline',
-                cursor: 'pointer',
-              }}
-            >
-              {ctg?.name}
-            </span>
+            <span className="category-name">{ctg?.name}</span>{' '}
+            {/* Apply CSS class */}
             {ctg?.isLike ? (
-              <span
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 5,
-                }}
-              >
+              <span className="favorite-info">
+                {' '}
+                {/* Apply CSS class */}
                 <FaStar color="#d5d552" /> Favorittsjanger
               </span>
             ) : (
-              <span
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 5,
-                }}
-              >
+              <span className="favorite-info">
+                {' '}
+                {/* Apply CSS class */}
                 <CiStar />
                 Legg til i favoriteliste
               </span>

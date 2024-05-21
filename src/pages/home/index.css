@@ -3,6 +3,21 @@
   grid-template-columns: 1fr 1fr; /* Two equal columns */
   gap: 10px; /* Optional: space between grid items */
   padding: 10px 10px; /* Optional: padding around the grid container */
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.movies-container-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 10px;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
 }
 
 .movies {
@@ -11,17 +26,9 @@
   grid-template-columns: 1fr 1fr; /* Two equal columns */
   gap: 30px; /* Optional: space between grid items */
   padding: 0 10px; /* Optional: padding around the grid container */
-}
-
-.movie-title {
-  font-size: 18px;
-  padding-top: 20px;
-  font-weight: 600;
-}
-
-.movie-title:hover {
-  text-decoration: underline !important;
-  color: blue;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .right-container {
@@ -34,8 +41,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  margin: 10px 10px;
-  padding-bottom: 10px;
   font-weight: 600;
   font-size: 16px;
 }
@@ -46,6 +51,9 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 10px !important;
+  }
 }
 
 .user-page {

@@ -32,14 +32,7 @@ export const HomePage = () => {
       </div>
       <div className="movies-container">
         <div className="">
-          <div
-            style={{
-              paddingRight: 10,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
+          <div className="movies-container-title">
             <h2 className="home-page-title ">
               <FaStar /> Filmer jeg skal se!
             </h2>

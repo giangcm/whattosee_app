@@ -1,0 +1,36 @@
+.container-category-page {
+  margin: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.category {
+  margin-top: 20px;
+  width: 40%;
+  @media only screen and (max-width: 1024px) {
+    width: 60%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid silver;
+  padding: 10px 5px;
+}
+
+.category-item span {
+  cursor: pointer;
+}
+
+.favorite-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
