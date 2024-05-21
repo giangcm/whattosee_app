@@ -5,6 +5,14 @@
   padding: 0 10px; /* Optional: padding around the grid container */
 }
 
+.detail-user-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0px;
+}
+
 .movies {
   cursor: pointer;
   display: grid;

@@ -13,12 +13,25 @@ export const removeCurrentUser = () => {
 };
 
 export const users = [
-  { id: 1, name: 'Ulrikke', favorite: ['galaxy'], like: ['movie_926'] },
+  {
+    id: 1,
+    name: 'Ulrikke',
+    watch: ['Alien', 'Blade Runner 2049', 'Galaxy Quest'],
+    favorite: ['galaxy'],
+    like: ['movie_926'],
+  },
   {
     id: 2,
     name: 'Marius',
+    watch: ['Galaxy Quest', 'Elysium', 'WALL·E'],
     favorite: ['galaxy', 'alien'],
     like: ['movie_926', 'movie_679'],
   },
-  { id: 3, name: 'Egil', favorite: ['alien'], like: ['movie_679'] },
+  {
+    id: 3,
+    name: 'Egil',
+    watch: ['Galaxy Quest', 'Guardians of the Galaxy', 'WALL·E'],
+    favorite: ['alien'],
+    like: ['movie_679'],
+  },
 ];

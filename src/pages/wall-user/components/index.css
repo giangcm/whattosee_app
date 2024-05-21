@@ -1,0 +1,28 @@
+.template-container {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr; /* Two equal columns */
+  gap: 10px; /* Optional: space between grid items */
+  padding: 10px 0px; /* Optional: padding around the grid container */
+}
+
+.template-title {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.template-description {
+  padding: 10px 0px;
+}
+
+.template-category {
+  padding-left: 20px;
+}
+.template-category-item {
+  cursor: pointer;
+  margin: 5px 0;
+}
+.template-category-item:hover {
+  text-decoration: underline !important;
+  color: blue;
+}

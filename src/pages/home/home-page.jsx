@@ -1,43 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { CiFaceSmile } from 'react-icons/ci';
 import { FaStar } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { Sanity } from '../../../sanity';
+import { useMovie } from '../../hooks/useMovie';
 import '../../styles/list.css';
 import { imageUrlFor } from '../../utils/image';
 import { getCurrentUser, users } from '../../utils/user';
 import './index.css';
 
 export const HomePage = () => {
-  const [movies, setMovies] = useState([]);
+  const user = getCurrentUser();
   const navigate = useNavigate();
+  const { movies } = useMovie();
 
   useEffect(() => {
     const user = getCurrentUser();
     navigate(`${user ? '/home' : '/'}`);
   }, []);
-
-  const getStaticPaths = async () => {
-    // Get the paths we want to pre-render based on persons
-    const query = `*[_type == "movie" ] {
-            _id,
-            title,
-            _type,
-            releaseDate,
-            poster,
-            "category": category->title,
-            "posterAspect": poster.asset->.metadata.dimensions.aspectRatio,
-            "director": crewMembers[job == "Director"][0].person->name
-          }[0...3]
-          `;
-    const movies = await Sanity.fetch(query);
-    setMovies(movies);
-  };
-  useEffect(() => {
-    getStaticPaths();
-  }, []);
-
-  const user = getCurrentUser();
 
   const users_ = users?.filter((u) => u?.id !== user?.id);
   return (
@@ -69,7 +48,10 @@ export const HomePage = () => {
 
           <div className="movies">
             {movies.map((movie) => (
-              <div key={movie._id} className="list__item">
+              <div
+                key={'home-page-movie-poster' + movie._id}
+                className="list__item"
+              >
                 {movie.poster && (
                   <img
                     style={{
