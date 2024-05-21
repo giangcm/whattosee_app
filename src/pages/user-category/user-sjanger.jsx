@@ -1,25 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useMovie } from '../../hooks/useMovie';
 import { imageUrlFor } from '../../utils/image';
-import { getCurrentUser } from '../../utils/user';
 import './index.css';
+import { useMovieCategory } from './useCategory';
 
-const UserCategoryPage = () => {
+const SjangerPage = () => {
   const navigate = useNavigate();
-  const currentUser = getCurrentUser();
-  const { movies } = useMovie({ watch: currentUser?.watch });
+  const { categories, category } = useMovieCategory();
   return (
-    <div className="category-container">
-      <h2 className="category-title">onskelister og favoritter</h2>
-      <p className="category-description">
-        Dere har noen filmer som er pa onskelisten til en av dere og
-        favorittlisten til den andre! Kanskje kan en av dere fa innfore den
-        andre i en ny filmopplevels...?!
-      </p>
+    <div className="sjanger-container">
+      <h2 className="sjanger-title">
+        Sjanger: {category} ({categories?.length} filmer)
+      </h2>
       <div className="category-movie-container">
         {' '}
-        {movies?.map((movie) => (
+        {categories?.map((movie) => (
           <div
             key={`category-genre-${movie.id}`}
             onClick={() => navigate(`/movie/${movie._id}`)}
@@ -48,4 +43,4 @@ const UserCategoryPage = () => {
   );
 };
 
-export default UserCategoryPage;
+export default SjangerPage;

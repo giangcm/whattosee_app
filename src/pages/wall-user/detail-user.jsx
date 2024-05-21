@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { getCurrentUser, users } from '../../utils/user';
+import UserCategoryPage from '../user-category/user-category-page';
 import { TemplateCategory } from './components/category-template';
 import './index.css';
 
@@ -14,7 +15,7 @@ export const DetailUser = () => {
   );
 
   return (
-    <div>
+    <div className="wrapper-container">
       <h2 className="detail-user-title">
         Forslag for {currentUser?.name} og {user.name}
       </h2>
@@ -50,6 +51,7 @@ export const DetailUser = () => {
           />
         </div>
       </div>
+      <UserCategoryPage />
     </div>
   );
 };

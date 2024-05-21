@@ -29,5 +29,5 @@ export const useMovieCategory = () => {
     getCategoryMovieFn();
   }, []);
 
-  return { categories };
+  return { categories, category };
 };

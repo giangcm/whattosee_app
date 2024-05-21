@@ -1,7 +1,11 @@
 .category-container {
-  margin: 20px 10%;
+  margin: 10px;
   padding: 20px;
   background: #f1f1f1;
+}
+.sjanger-container {
+  margin: 10px;
+  padding: 20px;
 }
 
 .category-movie-container {
@@ -16,6 +20,13 @@
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.sjanger-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
   margin-bottom: 40px;
 }
 
