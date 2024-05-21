@@ -6,6 +6,9 @@
 .sjanger-container {
   margin: 10px;
   padding: 20px;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+  }
 }
 
 .category-movie-container {
@@ -14,8 +17,23 @@
   gap: 40px; /* Optional: space between grid items */
   padding: 10px 0px; /* Optional: padding around the grid container */
   @media only screen and (max-width: 768px) {
+    gap: 20px;
     grid-template-columns: 1fr 1fr; /* Two equal columns */
   }
+}
+
+.sjanger-category-item {
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgb(58, 47, 77);
+  color: white;
+}
+
+.sjanger-movie-title {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .category-title {

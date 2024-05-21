@@ -18,9 +18,7 @@ const SjangerPage = () => {
           <div
             key={`category-genre-${movie.id}`}
             onClick={() => navigate(`/movie/${movie._id}`)}
-            style={{
-              cursor: 'pointer',
-            }}
+            className="sjanger-category-item"
           >
             {movie.poster && (
               <img
@@ -31,7 +29,7 @@ const SjangerPage = () => {
               />
             )}
             <h2
-              className="movie-title"
+              className="sjanger-movie-title"
               onClick={() => navigate(`/movie/${movie._id}`)}
             >
               {movie.title} ({movie.releaseDate.substr(0, 4)})
