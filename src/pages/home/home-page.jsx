@@ -11,7 +11,7 @@ import './index.css';
 export const HomePage = () => {
   const user = getCurrentUser();
   const navigate = useNavigate();
-  const { movies } = useMovie();
+  const { movies } = useMovie({ watch: user.watch });
 
   useEffect(() => {
     const user = getCurrentUser();

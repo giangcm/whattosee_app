@@ -1,18 +1,31 @@
 import React from 'react';
+import { useMovie } from '../../../hooks/useMovie';
 import { imageUrlFor } from '../../../utils/image';
 import './index.css';
 export const TemplateCategory = ({
   title,
-  description,
-  movies,
   categories,
+  filter,
+  description,
 }) => {
+  const { movies, findCommonMovies } = useMovie({ watch: filter?.user });
+  const { movies: currentUserMovies } = useMovie({
+    watch: filter?.currentUser,
+  });
+  const catchUpMovies = findCommonMovies(currentUserMovies, movies);
+
   return (
     <div>
       <h2 className="template-title">{title}</h2>
-      <p className="template-description"> {description}</p>
+      {!description ? (
+        <p className="template-description">
+          Dere har {catchUpMovies?.length} filmer felles i onskelistene deres
+        </p>
+      ) : (
+        <p className="template-description">{description}</p>
+      )}
       <div>
-        {movies?.map((movie) => (
+        {catchUpMovies?.map((movie) => (
           <div
             key={`category-${title}-${movie.id}`}
             className="template-container"

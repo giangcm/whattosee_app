@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { useMovie } from '../../hooks/useMovie';
 import { getCurrentUser, users } from '../../utils/user';
 import { TemplateCategory } from './components/category-template';
 import './index.css';
@@ -9,8 +8,6 @@ export const DetailUser = () => {
   const location = useLocation();
   const user = users.filter((usr) => location.pathname.includes(usr?.name))[0];
   const currentUser = getCurrentUser();
-  const { movies } = useMovie();
-  console.log(user);
 
   return (
     <div>
@@ -21,23 +18,31 @@ export const DetailUser = () => {
         <div>
           <TemplateCategory
             title={'Catch up!'}
-            description={'Dere har 2 filmer felles i onskelistene deres'}
-            movies={movies}
-            d
+            key={'category-catch-up'}
+            filter={{
+              user: user.watch,
+              currentUser: currentUser.watch,
+            }}
           />
         </div>
         <div>
           <TemplateCategory
             title={'Go safe!'}
-            description={'Dere har 1 filmer felles i onskelistene deres'}
-            movies={movies}
+            key={'category-go-safe'}
+            filter={{
+              user: user.favorite,
+              currentUser: currentUser.favorite,
+            }}
           />
         </div>
         <div>
           <TemplateCategory
-            title={'Go safe!'}
-            description={'Dere har 1 filmer felles i onskelistene deres'}
+            key={'category-utforsk'}
+            title={'Utforsk!'}
             categories={['Action', 'Adventure']}
+            description={
+              'Dere liker begge disse sjangere, sjekk hvike filmer som finnes a velge mellom:'
+            }
           />
         </div>
       </div>
