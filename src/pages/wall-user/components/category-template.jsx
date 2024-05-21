@@ -48,7 +48,7 @@ export const TemplateCategory = ({
               className="movie-title"
               onClick={() => navigate(`/movie/${movie._id}`)}
             >
-              {movie.title} ({movie.releaseDate.substr(0, 4)})
+              {movie.title}
             </h2>
           </div>
         ))}

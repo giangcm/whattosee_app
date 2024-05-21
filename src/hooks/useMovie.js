@@ -8,16 +8,13 @@ export const useMovie = ({ watch }) => {
     // Get the paths we want to pre-render based on persons
     const watchTitles = watch.map((title) => `'${title}'`).join(',');
 
-    const query = `*[_type == "movie" && title in [${watchTitles}] ] {
+    const query = `*[_type == "movies" && title in [${watchTitles}] ] {
             _id,
             title,
-            _type,
-            imdb_id,
+            imdb,
             releaseDate,
+            genre,
             poster,
-            "category": category->title,
-            "posterAspect": poster.asset->.metadata.dimensions.aspectRatio,
-            "director": crewMembers[job == "Director"][0].person->name
           }[0...3]
           `;
     const movies = await Sanity.fetch(query);

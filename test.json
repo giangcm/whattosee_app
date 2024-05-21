@@ -1,12 +1,12 @@
 {
   "results": {
     "_id": "61e57fd65c5338f43c777f4c",
-    "id": "tt0000045",
+    "id": "tt0000045", //imdbId
     "primaryImage": {
       "id": "rm362538496",
       "width": 226,
       "height": 300,
-      "url": "https://m.media-amazon.com/images/M/MV5BNzBjZjI4YjYtNGIyOC00ZDQyLTg0OTctN2U2YmUyMjJiZTQzXkEyXkFqcGdeQXVyNTI2NTY2MDI@._V1_.jpg",
+      "url": "https://m.media-amazon.com/images/M/MV5BNzBjZjI4YjYtNGIyOC00ZDQyLTg0OTctN2U2YmUyMjJiZTQzXkEyXkFqcGdeQXVyNTI2NTY2MDI@._V1_.jpg", //poster
       "caption": {
         "plainText": "Les blanchisseuses (1896)",
         "__typename": "Markdown"
@@ -21,7 +21,7 @@
       "__typename": "TitleType"
     },
     "titleText": {
-      "text": "Les blanchisseuses",
+      "text": "Les blanchisseuses", //film name
       "__typename": "TitleText"
     },
     "originalTitleText": {

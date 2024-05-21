@@ -1,4 +1,4 @@
-import {MovieSchema} from './movieSchema'
+import {MovieType} from './movieSchema'
 import {PersonSchema} from './personSchema'
 
-export const schemaTypes = [MovieSchema, PersonSchema]
+export const schemaTypes = [MovieType, PersonSchema]

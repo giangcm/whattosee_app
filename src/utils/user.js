@@ -16,8 +16,8 @@ export const users = [
   {
     id: 1,
     name: 'Ulrikke',
-    watch: ['Alien', 'Elysium', 'Galaxy Quest'],
-    favorite: ['Galaxy Quest'],
+    watch: ['The Haunted House(1899)', 'Miss Jerry(1984)', 'King John(2015)'],
+    favorite: ['Miss Jerry(1984)'],
     like: ['movie_926'],
     category: ['Action', 'Adventure'],
     genres: [
@@ -36,8 +36,8 @@ export const users = [
   {
     id: 2,
     name: 'Marius',
-    watch: ['Galaxy Quest', 'Elysium', 'WALL·E'],
-    favorite: ['Galaxy Quest', 'WALL·E'],
+    watch: ['King John(2015)', 'A Weekend in Busan', 'Miss Jerry(1984)'],
+    favorite: ['Miss Jerry(1984)', 'King John(2015)'],
     like: ['movie_926', 'movie_679'],
     category: ['Action', 'Adventure'],
     genres: [
@@ -56,8 +56,12 @@ export const users = [
   {
     id: 3,
     name: 'Egil',
-    watch: ['Galaxy Quest', 'Guardians of the Galaxy', 'WALL·E'],
-    favorite: ['WALL·E', 'Guardians of the Galaxy'],
+    watch: [
+      'King John(2015)',
+      'The Taming of the Shrew',
+      'Blacksmith Scene(1893)',
+    ],
+    favorite: ['The Taming of the Shrew', 'King John(2015)'],
     like: ['movie_679'],
     category: ['Action'],
     genres: [

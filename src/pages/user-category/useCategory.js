@@ -8,18 +8,15 @@ export const useMovieCategory = () => {
 
   const getCategoryMovieFn = async () => {
     // Get the paths we want to pre-render based on persons
-    const action_ = `'${category}'`;
+    const action_ = `'${category.toLocaleLowerCase()}'`;
 
-    const query = `*[_type == "movie" && slug.current match ${action_}] {
+    const query = `*[_type == "movies"  && genre == ${action_}] {
             _id,
             title,
-            _type,
             releaseDate,
+            genre,
             poster,
-            imdb_id,
-            "category": category->title,
-            "posterAspect": poster.asset->.metadata.dimensions.aspectRatio,
-            "director": crewMembers[job == "Director"][0].person->name
+            imdb,
           }[0...5]
           `;
     const response = await Sanity.fetch(query);

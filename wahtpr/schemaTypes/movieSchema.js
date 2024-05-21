@@ -1,8 +1,8 @@
 import {defineType} from 'sanity'
 
-export const MovieSchema = defineType({
-  name: 'movie',
-  title: 'Movie',
+export const MovieType = defineType({
+  name: 'movies',
+  title: 'Movies',
   type: 'document',
   fields: [
     {
@@ -61,13 +61,7 @@ export const MovieSchema = defineType({
     {
       name: 'imdb',
       title: 'IMDb Link',
-      type: 'url',
-      validation: (Rule) =>
-        Rule.uri({
-          scheme: ['http', 'https'],
-          allowRelative: false,
-          message: 'Invalid IMDb URL',
-        }),
+      type: 'string',
     },
   ],
   preview: {
