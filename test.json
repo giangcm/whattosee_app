@@ -1,0 +1,43 @@
+{
+  "results": {
+    "_id": "61e57fd65c5338f43c777f4c",
+    "id": "tt0000045",
+    "primaryImage": {
+      "id": "rm362538496",
+      "width": 226,
+      "height": 300,
+      "url": "https://m.media-amazon.com/images/M/MV5BNzBjZjI4YjYtNGIyOC00ZDQyLTg0OTctN2U2YmUyMjJiZTQzXkEyXkFqcGdeQXVyNTI2NTY2MDI@._V1_.jpg",
+      "caption": {
+        "plainText": "Les blanchisseuses (1896)",
+        "__typename": "Markdown"
+      },
+      "__typename": "Image"
+    },
+    "titleType": {
+      "text": "Short",
+      "id": "short",
+      "isSeries": false,
+      "isEpisode": false,
+      "__typename": "TitleType"
+    },
+    "titleText": {
+      "text": "Les blanchisseuses",
+      "__typename": "TitleText"
+    },
+    "originalTitleText": {
+      "text": "Les blanchisseuses",
+      "__typename": "TitleText"
+    },
+    "releaseYear": {
+      "year": 1896,
+      "endYear": null,
+      "__typename": "YearRange"
+    },
+    "releaseDate": {
+      "day": null,
+      "month": null,
+      "year": 1896,
+      "__typename": "ReleaseDate"
+    }
+  }
+}

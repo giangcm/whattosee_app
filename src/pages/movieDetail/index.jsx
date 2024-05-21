@@ -15,6 +15,7 @@ const MovieDetail = () => {
             overview,
             releaseDate,
             poster,
+            imdb_id,
             "cast": castMembers[] {
               _key,
               characterName,

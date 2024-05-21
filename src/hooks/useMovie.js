@@ -12,6 +12,7 @@ export const useMovie = ({ watch }) => {
             _id,
             title,
             _type,
+            imdb_id,
             releaseDate,
             poster,
             "category": category->title,

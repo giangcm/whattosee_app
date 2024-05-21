@@ -16,6 +16,7 @@ export const useMovieCategory = () => {
             _type,
             releaseDate,
             poster,
+            imdb_id,
             "category": category->title,
             "posterAspect": poster.asset->.metadata.dimensions.aspectRatio,
             "director": crewMembers[job == "Director"][0].person->name
