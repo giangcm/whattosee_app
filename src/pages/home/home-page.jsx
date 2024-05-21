@@ -63,7 +63,10 @@ export const HomePage = () => {
                       .width(200)}
                   />
                 )}
-                <h2 className="movie-title">
+                <h2
+                  className="movie-title"
+                  onClick={() => navigate(`/movie/${movie._id}`)}
+                >
                   {movie.title} ({movie.releaseDate.substr(0, 4)})
                 </h2>
               </div>

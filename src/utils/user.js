@@ -19,7 +19,7 @@ export const users = [
     watch: ['Alien', 'Elysium', 'Galaxy Quest'],
     favorite: ['Galaxy Quest'],
     like: ['movie_926'],
-    category: ['Action', 'Adventure', 'Comedy'],
+    category: ['Action', 'Adventure'],
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const users = [
     watch: ['Galaxy Quest', 'Elysium', 'WALL·E'],
     favorite: ['Galaxy Quest', 'WALL·E'],
     like: ['movie_926', 'movie_679'],
-    category: ['Action', 'Documentary', 'Thriller', 'Adventure'],
+    category: ['Action', 'Adventure'],
   },
   {
     id: 3,
@@ -35,6 +35,6 @@ export const users = [
     watch: ['Galaxy Quest', 'Guardians of the Galaxy', 'WALL·E'],
     favorite: ['WALL·E', 'Guardians of the Galaxy'],
     like: ['movie_679'],
-    category: ['Drama', 'Comedy', 'Thriller'],
+    category: ['Action'],
   },
 ];
